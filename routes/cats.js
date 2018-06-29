@@ -5,20 +5,38 @@ const router = require('express').Router();
 const {cats} = require('../dummy-data');
 
 router.get('/', (req,res,next) => {
-	const catData = cats.peek();
-	if(catData) {
-		res.json(catData);
-	} else {
-		res.json({message:'No Cats up for Adoption.'});
+	try{
+
+
+		const catData = cats.peek();
+		let response;
+		if(catData) {
+			response = Object.assign({status:'ok'}, catData);
+			res.json(response);
+		} else {
+			response = {message:'we\'re empty'};
+			res.json(response);
+		}
+	}
+	catch(err) {
+		next();
 	}
 });
 
 router.delete('/', (req,res,next) => {
-	const catData = cats.peek();
-	if(catData) {
-		res.json(cats.dequeue());
-	} else {
-		res.json({message:'Can\'t adopt a non-existent cat.'});
+	try {
+		const catData = cats.peek();
+		let response;
+		if(catData) {
+			response = Object.assign({status:'adopted'}, cats.dequeue());
+			res.json(response);
+		} else {
+			response = {message:'we\'re empty'};
+			res.json(response);
+		}
+	}
+	catch(err) {
+		next();
 	}
 });
 
