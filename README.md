@@ -67,3 +67,9 @@ If an error occurs then the API will send a JSON error object in the following f
     "message": "A description of the error"
 }
 ```
+
+### Tech Stack
+
+[Node](https://nodejs.org/en/)
+
+[Express](https://expressjs.com/)
