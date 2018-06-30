@@ -1,13 +1,10 @@
-'use strict';
 
 const router = require('express').Router();
 
 const {cats} = require('../dummy-data');
 
 router.get('/', (req,res,next) => {
-	try{
-
-
+	try {
 		const catData = cats.peek();
 		let response;
 		if(catData) {

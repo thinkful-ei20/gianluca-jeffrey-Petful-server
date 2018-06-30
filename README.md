@@ -32,7 +32,7 @@ Adopt the next dog up for adoption.
 
 *Example*:
 
-```
+```txt
 > GET /cats
 
 < Status: 200 OK
@@ -49,7 +49,7 @@ Adopt the next dog up for adoption.
 
 _In the event that no animals are available for adoption, your call to the API will result in the following message_:
 
-```
+```txt
 > GET /cats
 
 < Status: 200 OK

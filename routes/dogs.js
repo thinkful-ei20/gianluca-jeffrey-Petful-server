@@ -1,4 +1,3 @@
-'use strict';
 
 const router = require('express').Router();
 
@@ -22,7 +21,7 @@ router.get('/', (req,res,next) => {
 });
 
 router.delete('/', (req,res,next) => {
-	try{
+	try {
 		const dogData = dogs.peek();
 		let response;
 		if(dogData) {
